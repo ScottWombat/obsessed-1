@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    title= title
+    link(href="static/favicon.ico" rel="icon" type="image/x-icon")
+    link(rel="stylesheet", href="/static/normalize.css")
+    link(rel="stylesheet", href="/static/import_fonts.css")
+    link(rel="stylesheet", href="/static/app.css")
+    link(rel="stylesheet", href="/static/intro.css")
+    link(rel="stylesheet", href="/static/canvas.css")
+    link(rel="stylesheet", href="/static/app.bundle.css")
+    link(rel="stylesheet", href="/static/main.css")
+
+  body
+    noscript
+        p You need to enable JavaScript to run this app.
+    script(type='text/javascript').
+        window.__INITIAL_STATE__ = !{JSON.stringify(data)}
+
+    div#app!=content
+  
+     
+    div#curtain
+        div#curtain_left
+        div#curtain_right
+        div#loading 
+            img(src='static/giphy.gif')
+            div.loading_animation
+                    span 
+           
+    
+    div#canvas-wrapper.canvas-wrapper
+        canvas#app-canvas width='2303'>
+ 
+    script(stype='text/javascript', src='/static/initMood.js')
+    script(stype='text/javascript', src=process.env.NODE_ENV === 'production' ? '/static/app.js' : 'http://localhost:3002/client.js')

@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    script(type='text/javascript').
+        window.__INITIAL_STATE__ = !{JSON.stringify(data)}
+
+    div#app!=content
+  
+     
+    div#curtain
+        div#curtain_left
+        div#curtain_right
+        div#loading 
+            img(src='static/giphy.gif')
+            div.loading_animation
+                    span 
+           
+    
+    div#canvas-wrapper.canvas-wrapper
+        canvas#app-canvas width='2303'>
+   
+ 
+    script(stype='text/javascript', src='/static/initMood.js')
+    script(stype='text/javascript', src=process.env.NODE_ENV === 'production' ? '/static/app.js' : 'http://localhost:3002/client.js')
